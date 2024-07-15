@@ -56,7 +56,6 @@ La interfaz del usuario está diseñada para ser intuitiva y fácil de usar:
   <img src="https://github.com/DiegoFernandoLojanTN/ClasificacionTablas_Model/blob/master/calasificado.png" alt="Ejemplo de Detección">
 </p>
 
-
 ## Licencia
 Este proyecto está licenciado bajo la [MIT License](LICENSE).
 
