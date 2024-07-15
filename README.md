@@ -50,8 +50,12 @@ La interfaz del usuario está diseñada para ser intuitiva y fácil de usar:
 
 ## Ejemplo de Uso
 
-1. **Ejemplo de Deteccipon**
-   [![imagen-2024-07-15-112045252.png](https://i.postimg.cc/j5Ks8JWd/imagen-2024-07-15-112045252.png)](https://postimg.cc/2qcRyyFP)
+1. **Ejemplo de Detección**
+
+<p align="center">
+  <img src="https://github.com/DiegoFernandoLojanTN/ClasificacionTablas_Model/blob/main/tonto.png" alt="Ejemplo de Detección">
+</p>
+
 
 ## Licencia
 Este proyecto está licenciado bajo la [MIT License](LICENSE).
