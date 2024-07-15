@@ -51,7 +51,7 @@ La interfaz del usuario está diseñada para ser intuitiva y fácil de usar:
 ## Ejemplo de Uso
 
 1. **Ejemplo de Deteccipon**
-   [![Paso 1](https://i.postimg.cc/G3xNjRpJ/imagen-2024-07-15-105709784.png)](https://postimg.cc/JttP19ZG)
+   [![imagen-2024-07-15-112045252.png](https://i.postimg.cc/j5Ks8JWd/imagen-2024-07-15-112045252.png)](https://postimg.cc/2qcRyyFP)
 
 ## Licencia
 Este proyecto está licenciado bajo la [MIT License](LICENSE).
