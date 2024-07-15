@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Detección de Tablas en Imágenes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212; /* Darker background */
+      color: #ddd; /* Light grey text for better visibility */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh; /* Full height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: #1e1e1e; /* Dark background for container */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+      max-width: 1200px;
+      width: 100%;
+      margin: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .icon {
+      color: #ff6347; /* Tomato red for icons */
+    }
+    .row {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .col-md-6 {
+      flex: 1;
+      background: rgba(68, 68, 68, 0.9); /* Slightly transparent black */
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+      transition: transform 0.3s; /* Animation for hover */
+    }
+    .col-md-6:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+    .btn-custom {
+      background-color: #c82333;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      width: 100%;
+      transition: background-color 0.3s; /* Smooth background color transition */
+    }
+    .btn-custom:hover {
+      background-color: #a71b2a; /* Darker red on hover */
+    }
+    .image-preview {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #666;
+      margin-top: 20px;
+      border-radius: 10px; /* Rounded corners */
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      width: 100%;
+      color: #aaa; /* Light grey for the footer */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-table icon"></i> Detección de Tablas en Imágenes</h1>
+      <p>Sube una imagen y clasifica tablas con bordes o sin bordes automáticamente.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data" action="{{ url_for('upload_image') }}">
+          <input type="file" class="form-control mb-2" name="file" required>
+          <button type="submit" class="btn btn-custom">Cargar Imagen</button>
+        </form>
+        {% if filename %}
+          <img src="{{ url_for('uploaded_file', filename=filename) }}" class="image-preview">
+        {% endif %}
+      </div>
+      <div class="col-md-6">
+        {% if filename %}
+          <form method="get" action="{{ url_for('classify_image', filename=filename) }}">
+            <button type="submit" class="btn btn-custom">Clasificar Imagen</button>
+          </form>
+        {% endif %}
+        {% if result_message %}
+          <p>{{ result_message }}</p>
+          {% if result_image %}
+            <img src="{{ url_for('static', filename=result_image) }}" class="image-preview">
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="footer">
+      <p>© 2024 UNL | Todos los derechos reservados</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
