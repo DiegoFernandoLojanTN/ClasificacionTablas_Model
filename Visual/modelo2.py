@@ -76,13 +76,16 @@ def classify_image(filename):
         if detected_class == 0:  # Clase 0: bordered
             save_path = os.path.join(bordered_dir, filename)
             result_message = "Se detectó una tabla con borde en la imagen."
+            result_image = "modelo2/bordered/" + os.path.basename(save_path)
         elif detected_class == 1:  # Clase 1: borderless
             save_path = os.path.join(borderless_dir, filename)
             result_message = "Se detectó una tabla sin borde en la imagen."
+            result_image = "modelo2/borderless/" + os.path.basename(save_path)
         else:
             # Si hay otras clases, por ahora tratémoslas como fallidas
             save_path = os.path.join(failed_dir, filename)
             result_message = "No se pudo clasificar correctamente la imagen."
+            result_image = "modelo2/failed/" + os.path.basename(save_path)
     
     # Guardar la imagen renderizada
     render = render_result(model=model, image=filepath, result=results[0])
@@ -90,7 +93,6 @@ def classify_image(filename):
     
     # Ruta de la imagen renderizada para mostrar en la plantilla
     if os.path.exists(save_path):
-        result_image = os.path.join('modelo2', os.path.basename(save_path))
         session['last_classified_image'] = result_image  # Guardar la ruta de la última imagen clasificada en sesión
     
     return render_template('upload.html', filename=filename, result_message=result_message, result_image=result_image)
