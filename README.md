@@ -53,7 +53,7 @@ La interfaz del usuario está diseñada para ser intuitiva y fácil de usar:
 1. **Ejemplo de Detección**
 
 <p align="center">
-  <img src="https://github.com/DiegoFernandoLojanTN/ClasificacionTablas_Model/blob/main/tonto.png" alt="Ejemplo de Detección">
+  <img src="https://github.com/DiegoFernandoLojanTN/ClasificacionTablas_Model/blob/master/calasificado.png" alt="Ejemplo de Detección">
 </p>
 
 
